@@ -18,7 +18,7 @@ const Main = () => {
 
 
     const postComments = (postId) => {
-        comments.findAll(comment => {
+        findAll(comment => {
             if (comment.postId === postId) {
                 return true
             } else {
