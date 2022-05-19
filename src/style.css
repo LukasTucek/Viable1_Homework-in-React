@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Titillium+Web&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --main-color: #fedf00;
+  --text-color: #000000;
+  --bg-color: #ededed;
+  --bg-copy-color: #f6f6f6;
+  --bg-post-color: #cacaca;
+  --big-font: 2.5rem;
+  --h2-font: 1.5rem;
+  --p-font: 1.1rem;
+}
+
+html {
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+  background: var(--bg-copy-color);
+}
+
+.container {
+  /*max-width: 50%;*/
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+

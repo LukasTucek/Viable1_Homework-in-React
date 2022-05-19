@@ -1,0 +1,8 @@
+.header {
+    padding: 30px;
+    font-size: var(--big-font);
+    text-shadow: 2px 2px 8px rgb(133, 133, 133);
+    background: var(--main-color);
+    text-align: center;
+  }
+  

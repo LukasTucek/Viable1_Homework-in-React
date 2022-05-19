@@ -1,0 +1,21 @@
+.all-posts {
+    border: 2px solid var(--main-color);
+    padding: 50px;
+    margin: auto;
+    background: var(--bg-color);
+    max-width: 80%;
+}
+
+.post-name {
+    padding: 4px 20px;
+    color: var(--text-color);
+    background-color: var(--bg-post-color);
+    font-size: var(--h2-font)
+}
+
+.post-copy {   
+    padding: 4px 20px;
+    color: var(--text-color);
+    background-color: var(--bg-copy-color);
+    font-size: var(--p-font)
+}
