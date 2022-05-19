@@ -4,7 +4,9 @@ input, select, textarea {
     border: 1px solid var(--bg-color);
     box-sizing: border-box;
     margin-top: 10px;
-    resize: vertical;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: var(--p-font);
   }
 
   input[type=submit] {
@@ -18,5 +20,12 @@ input, select, textarea {
   input[type=submit]:hover {
     background-color: var(--main-color);
     color: var(--text-color);
+  }
+
+  textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 100px;
+
   }
   

@@ -17,29 +17,17 @@ const Main = () => {
     }, []);
 
 
-    const postComments = (postId) => {
-        findAll(comment => {
+    const displayComments = (postId) => {
+        const postComments = comments.findAll(comment => {
             if (comment.postId === postId) {
                 return true
             } else {
                 return false
-            }
-        })};
+            }});
 
-    const commentsElements = postComments.map(komentar => <div>{komentar.email}</div>)
+        const commentsElements = postComments.map(komentar => <div>{komentar.email}</div>)
         return commentsElements;
-
-
-   // const displayComments = (postId) => {
-   //     return comments.find(comment => {
-   //         if (comment.postId === postId) {
-   //             return true 
-   //         } else {
-   //            return false
-   //         }
-   //             }).email
-   //   };
-
+    };
 
 
     return (
