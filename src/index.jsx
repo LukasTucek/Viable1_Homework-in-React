@@ -17,6 +17,7 @@ const App = () => (
 
 );
 
+//new root API (React 18)
 const container = document.querySelector('#app');
 const root = createRoot(container);
 root.render(<App />);

@@ -21,7 +21,7 @@ export default function App() {
           <textarea type="textarea" placeholder="Text" value={textArea} onChange={(e) => setTextArea(e.target.value)} required />
         </label>
         <br />
-        <input type="submit" value="SEND" onClick="" />
+        <input type="submit" value="SEND" />
       </form>
     )
   };

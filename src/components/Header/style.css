@@ -2,6 +2,7 @@
     padding: 40px 0 40px 0;
     font-size: var(--big-font);
     text-shadow: 2px 2px 15px rgb(133, 133, 133);
+    font-weight: 700;
     background: var(--main-color);
     text-align: center;
   }

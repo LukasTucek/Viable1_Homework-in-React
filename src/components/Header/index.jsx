@@ -6,11 +6,9 @@ const Header = ({title}) => {
     return (
 
         <div className="header">
-            <div>
                 {title}
                 <br />
                 <img src={headerIcon} alt="header-icon" className="header-icon" />
-            </div>
         </div>
 
 

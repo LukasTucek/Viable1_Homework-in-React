@@ -17,16 +17,28 @@ const Main = () => {
     }, []);
 
 
-
-    const displayComments = (postId) => {
-        return comments.find(comment => {
+    const postComments = (postId) => {
+        comments.findAll(comment => {
             if (comment.postId === postId) {
-                return true 
+                return true
             } else {
-               return false
+                return false
             }
-                }).email
-      };
+        })};
+
+    const commentsElements = postComments.map(komentar => <div>{komentar.email}</div>)
+        return commentsElements;
+
+
+   // const displayComments = (postId) => {
+   //     return comments.find(comment => {
+   //         if (comment.postId === postId) {
+   //             return true 
+   //         } else {
+   //            return false
+   //         }
+   //             }).email
+   //   };
 
 
 
@@ -48,7 +60,7 @@ const Main = () => {
                         <span className="post-copy">Popis<br /></span>{post.body}
                     </p>
                     <br />
-                        <span className="post-copy">Komentáře<br /></span>{displayComments(post.id)}
+                        <span className="post-copy">Komentáře<br /></span>
                     <br />
 
                     <Form />
