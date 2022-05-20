@@ -10,3 +10,11 @@
     padding: 2px 15px;
     background-color: var(--bg-color);
 }
+
+.comment-body {
+    color: blue;
+}
+
+.comment-name {
+    color: red;
+}

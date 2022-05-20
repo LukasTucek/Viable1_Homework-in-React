@@ -57,10 +57,10 @@ const Main = () => {
                         {postComments.map((comment) => 
                             <ul>
                                 <li>
-                                    <div key={comment.id}>{comment.body}</div>
+                                    <div className="comment-body" key={comment.id}>{comment.body}</div>
                                 </li>
                                 <li>
-                                    <div key={comment.name}>{comment.name}</div>
+                                    <div className="comment-name" key={comment.id}>{comment.name}</div>
                                 </li>
                             </ul>
                         )}
