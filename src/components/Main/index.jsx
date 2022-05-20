@@ -55,18 +55,25 @@ const Main = () => {
                     <div>
                         <div>{post.name}</div>
                         {postComments.map((comment) => 
-                            <ul>
+                            <ul key={comment.id}>
                                 <li>
-                                    <div className="comment-body" key={comment.id}>{comment.body}</div>
+                                    <div className="comment-name">{comment.name}</div>
                                 </li>
                                 <li>
-                                    <div className="comment-name" key={comment.id}>{comment.name}</div>
+                                    <div className="comment-email">{comment.email}</div>
+                                </li>
+                                <li>
+                                    <div className="comment-body">{comment.body}</div>
                                 </li>
                             </ul>
                         )}
                     </div>
                     
+
+
                     <Form />
+
+
 
                     <br />
                 </li>
