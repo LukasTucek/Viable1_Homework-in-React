@@ -16,19 +16,16 @@ const Main = () => {
             .then(data => setComments(data)) 
     }, []);
 
-
-    const displayComments = (postId) => {
-        const postComments = comments.findAll(comment => {
-            if (comment.postId === postId) {
-                return true
-            } else {
-                return false
-            }});
-
-        const commentsElements = postComments.map(komentar => <div>{komentar.email}</div>)
-        return commentsElements;
-    };
-
+    //const displayComments = (postId) => {
+    //    console.log(postId);
+    //    const postComments = comments.findAll(comment => {
+     //       if (comment.postId === postId) {
+     //           return console.log('funguje')
+     //      } else {
+    //           return console.log('nefunguje')
+    //       }});
+  
+//};
 
     return (
 
@@ -36,43 +33,46 @@ const Main = () => {
     {
         (posts === null || comments === null)
         ? <p>Načítám data z API...</p>
-        : <ul>
+        :   <ul>
 
-            {posts.map(post => (
+            {posts.map(post => {
+                const postComments = comments.filter((comment) => comment.postId === post.id)
+                
+                return (
+                    
                 <li key={post.id}>
                     <h2>
-                        <span className="post-name">Název postu<br /></span>{post.title}
+                        <span className="post-name">Název postu<br /></span>
+                        {post.title}
                     </h2>
                     <br />
                     <p>
-                        <span className="post-copy">Popis<br /></span>{post.body}
+                        <span className="post-name">Popis<br /></span>
+                        {post.body}
                     </p>
                     <br />
-                        <span className="post-copy">Komentáře<br /></span>
-                    <br />
-
+                        <span className="post-name">Komentáře<br /></span>
+                    <div>
+                        <div>{post.name}</div>
+                        {postComments.map((comment) => 
+                            <ul>
+                                <li>
+                                    <div key={comment.id}>{comment.body}</div>
+                                </li>
+                                <li>
+                                    <div key={comment.name}>{comment.name}</div>
+                                </li>
+                            </ul>
+                        )}
+                    </div>
+                    
                     <Form />
 
                     <br />
                 </li>
+           )})}
 
-            ))}
-
-
-{/* toto jsem si jen zkoušel, je to špatně */}
-            {comments.map(comment => (
-                <div key={comment.id}>
-                    <p>
-                        NAME: {comment.name} <br />
-                        EMAIL: {comment.email} <br />
-                        KOMENTÁŘE: {comment.body} <br />
-                    </p>
-                </div>
-
-                
-            ))}
-
-        </ul>
+            </ul>
     }
     </div>
     
