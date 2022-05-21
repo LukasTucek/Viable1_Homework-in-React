@@ -24,9 +24,8 @@ const Form = () => {
           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <textarea type="textarea" placeholder="Text" value={text} onChange={(e) => setText(e.target.value)} required />
+          <input type="submit" value="SEND" />
         </label>
-        <br />
-        <input type="submit" value="SEND" />
       </form>
     )
   };

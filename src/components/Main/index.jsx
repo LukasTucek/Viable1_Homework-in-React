@@ -52,7 +52,7 @@ const Main = () => {
                             <ul key={comment.id}>
                                 <div className="comment-table">
 
-                                <Avatar />
+                               <Avatar name={comment.email} />
 
                                 <li>
                                     <div className="comment-name">{comment.name}</div>
