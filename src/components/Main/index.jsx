@@ -1,35 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import './style.css';
 import Form from '../Form';
+import Avatar from '../Avatar';
 
 const Main = () => {
 
     const [posts, setPosts] = useState(null);
     const [comments, setComments] = useState(null);
 
+    //lze použít i Axios místo fetch()
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/posts`)
+        fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
             .then(data => setPosts(data)) 
-        fetch(`https://jsonplaceholder.typicode.com/comments`)
+        fetch('https://jsonplaceholder.typicode.com/comments')
             .then(response => response.json())
             .then(data => setComments(data)) 
     }, []);
 
-    //const displayComments = (postId) => {
-    //    console.log(postId);
-    //    const postComments = comments.findAll(comment => {
-     //       if (comment.postId === postId) {
-     //           return console.log('funguje')
-     //      } else {
-    //           return console.log('nefunguje')
-    //       }});
-  
-//};
-
     return (
 
     <div className="all-posts">
+
+
     {
         (posts === null || comments === null)
         ? <p>Načítám data z API...</p>
@@ -39,7 +32,7 @@ const Main = () => {
                 const postComments = comments.filter((comment) => comment.postId === post.id)
                 
                 return (
-                    
+
                 <li key={post.id}>
                     <h2>
                         <span className="post-name">Název postu<br /></span>
@@ -53,18 +46,26 @@ const Main = () => {
                     <br />
                         <span className="post-name">Komentáře<br /></span>
                     <div>
+
                         <div>{post.name}</div>
                         {postComments.map((comment) => 
                             <ul key={comment.id}>
+                                <div className="comment-table">
+
+                                <Avatar />
+
                                 <li>
                                     <div className="comment-name">{comment.name}</div>
                                 </li>
+                                
                                 <li>
                                     <div className="comment-email">{comment.email}</div>
                                 </li>
+                                <br />
                                 <li>
-                                    <div className="comment-body">{comment.body}</div>
+                                    <div>{comment.body}</div>
                                 </li>
+                                </div>
                             </ul>
                         )}
                     </div>

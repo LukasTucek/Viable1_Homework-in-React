@@ -5,8 +5,11 @@ import './style.css';
 //import components
 import Header from './components/Header';
 import Main from './components/Main';
-const App = () => (
-  
+
+const App = () => {
+  return (
+
+    
   <div className="container">
 
     <Header title="Viable One - FE test" />
@@ -16,6 +19,7 @@ const App = () => (
 
 
 );
+}
 
 //new root API (React 18)
 const container = document.querySelector('#app');
