@@ -20,9 +20,8 @@ const Main = () => {
 
 
     const handleDelete = () => {
-        setComments(comments?.filter((comment) => comment.id !== comment_id_to_delete))
+        setComments(comments?.filter((c) => c.id !== id))
   }
-
 
 
 
