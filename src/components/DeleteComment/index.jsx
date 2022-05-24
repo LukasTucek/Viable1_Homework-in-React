@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './style.css';
 
-const DeleteComment = () => {
+const DeleteComment = ({onDelete}) => {
 
     const [comments, setComments] = useState([]);
 
@@ -12,11 +12,11 @@ const DeleteComment = () => {
     }, []);
 
 
-    const handleDelete = (id) => {
-        console.log('Delete')
-        const updatedList = comments.filter((comments) => comments.id !== id);
-        setComments(updatedList);
-    }
+    //const handleDelete = (id) => {
+     //   console.log('Delete')
+    //    const updatedList = comments.filter((comments) => comments.id !== id);
+    //    setComments(updatedList);
+    //}
 
 
     return (

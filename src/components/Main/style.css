@@ -28,3 +28,31 @@
     margin-top: 10px;
     padding: 30px 50px;
 }
+
+button {
+    font-size: var(--h2-font);
+    display: flex;
+    position: absolute;
+    right: 0px;
+    margin-right: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--button-x-color);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+button:hover {
+    background-color: var(--bg-avatar-color);
+    color: var(--bg-copy-color);
+  }
+
+button:active {
+    background-color: var(--bg-avatar-color);
+    color: var(--bg-copy-color);
+  }

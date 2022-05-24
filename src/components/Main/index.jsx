@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import './style.css';
 import Form from '../Form';
 import Avatar from '../Avatar';
-import DeleteComment from '../DeleteComment';
 
 const Main = () => {
 
@@ -19,10 +18,22 @@ const Main = () => {
             .then(data => setComments(data)) 
     }, []);
 
+
+    const handleDelete = () => {
+        setComments(comments?.filter((comment) => comment.id !== comment_id_to_delete))
+        
+        <DeleteComment handleDelete={handleDelete} />
+  }
+
+
+
+
+
+
+
     return (
 
     <div className="all-posts">
-
 
     {
         (posts === null || comments === null)
@@ -55,7 +66,11 @@ const Main = () => {
                                 <ul>
                                     <Avatar name={comment.email} />
 
-                                    <DeleteComment />
+
+
+                                    <button type="button" onClick={handleDelete}>x</button>
+
+
 
                                     <li>
                                         <div className="comment-name">{comment.name}</div>
