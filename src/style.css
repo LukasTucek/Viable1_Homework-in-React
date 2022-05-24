@@ -11,9 +11,11 @@
 :root {
   --main-color: #fedf00;
   --text-color: #000000;
+  --button-x-color: #737373;
   --bg-color: #ededed;
   --bg-copy-color: #f6f6f6;
   --bg-post-color: #cacaca;
+  --bg-avatar-color: #f44336;
   --big-font: 2.5rem;
   --h2-font: 1.5rem;
   --p-font: 1rem;

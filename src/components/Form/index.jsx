@@ -19,6 +19,9 @@ const Form = () => {
     
 
     return (
+
+    <div>
+      
       <form onSubmit={handleSubmit}>
         <label>
           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
@@ -27,7 +30,11 @@ const Form = () => {
           <input type="submit" value="SEND" />
         </label>
       </form>
+
+    </div>
+
     )
   };
+
 
   export default Form;

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './style.css';
 import Form from '../Form';
 import Avatar from '../Avatar';
+import DeleteComment from '../DeleteComment';
 
 const Main = () => {
 
@@ -45,28 +46,30 @@ const Main = () => {
                     </p>
                     <br />
                         <span className="post-name">Komentáře<br /></span>
-                    <div>
 
+                    <div>
                         <div>{post.name}</div>
                         {postComments.map((comment) => 
-                            <ul key={comment.id}>
-                                <div className="comment-table">
+                            
+                            <div className="comment-table" key={comment.id}>
+                                <ul>
+                                    <Avatar name={comment.email} />
 
-                               <Avatar name={comment.email} />
+                                    <DeleteComment />
 
-                                <li>
-                                    <div className="comment-name">{comment.name}</div>
-                                </li>
+                                    <li>
+                                        <div className="comment-name">{comment.name}</div>
+                                    </li>
                                 
-                                <li>
-                                    <div className="comment-email">{comment.email}</div>
-                                </li>
-                                <br />
-                                <li>
-                                    <div>{comment.body}</div>
-                                </li>
-                                </div>
-                            </ul>
+                                    <li>
+                                        <div className="comment-email">{comment.email}</div>
+                                    </li>
+                                    <br />
+                                    <li>
+                                        <div>{comment.body}</div>
+                                    </li>
+                                </ul>
+                            </div>
                         )}
                     </div>
                     
