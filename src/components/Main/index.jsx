@@ -3,12 +3,11 @@ import './style.css';
 import Form from '../Form';
 import Avatar from '../Avatar';
 
-const Main = () => {
+const Main = ({name, email, text}) => {
 
     const [posts, setPosts] = useState(null);
     const [comments, setComments] = useState(null);
 
-    //lze použít i Axios místo fetch()
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
@@ -19,11 +18,9 @@ const Main = () => {
     }, []);
 
 
-    const handleDelete = () => {
-        setComments(comments?.filter((c) => c.id !== id))
-  }
-
-
+    const deleteHandle = (id) => () => //fce, která zavolá fci, když uživatel klikne na button 
+        setComments(comments.filter((c) => c.id !== id));
+    
 
     return (
 
@@ -61,10 +58,11 @@ const Main = () => {
                                     <Avatar name={comment.email} />
 
 
+
         
-                                    <button type="button" onClick={handleDelete}>x</button>
+                                    <button type="button" onClick={deleteHandle(comment.id)}>x</button>
                                       
-                                
+
 
 
                                     <li>
@@ -85,7 +83,7 @@ const Main = () => {
                     
 
 
-                    <Form />
+                    <Form name={name} email={email} text={text} />
 
 
 

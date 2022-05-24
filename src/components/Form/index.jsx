@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import { useForm } from "react-hook-form";
+import React, {useState, useEffect} from "react";
 import './style.css';
 
 const Form = () => {
@@ -7,16 +6,25 @@ const Form = () => {
     const [email, setEmail] = useState("");
     const [text, setText] = useState("");
 
+    useEffect(() => {
+      newComment();
+    }, [])
+
+    //const newComment = () => {
+    //  fetch('https://jsonplaceholder.typicode.com/comments')
+    //  .then(response => response.json())
+    //  .then(data => ...(data)) 
+    //}
+
+
+    
     const handleSubmit = (e) => {
-      e.preventDefault();
+      e.preventDefault(); //zakázání refresh stránky
       console.log(name, email, text);
       setName("");
       setEmail("");
       setText("");
     }
-
-      //alert(`Jméno: ${name} Email: ${email} Text: ${textArea}`)
-    
 
     return (
 
