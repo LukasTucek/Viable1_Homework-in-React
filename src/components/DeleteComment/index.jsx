@@ -1,11 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './style.css';
 
 const DeleteComment = () => {
 
     const [comments, setComments] = useState([]);
 
-    const handleDelete = () => {
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/comments/')
+            .then(response => response.json())
+            .then(data => setComments(data)) 
+    }, []);
+
+
+    const handleDelete = (id) => {
         console.log('Delete')
         const updatedList = comments.filter((comments) => comments.id !== id);
         setComments(updatedList);
@@ -15,16 +22,10 @@ const DeleteComment = () => {
     return (
 
         <div>   
-            <ul>
-            {comments.map(comment => (
-                <li>
-                    <button type="button" onClick={() => handleDelete()}>x</button>
-                </li>
-            ))}
 
-            
-            </ul>
+            <button type="button" onClick={() => handleDelete(id)}>x</button>
 
+        
         </div>
 
 
