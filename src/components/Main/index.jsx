@@ -21,12 +21,7 @@ const Main = () => {
 
     const handleDelete = () => {
         setComments(comments?.filter((comment) => comment.id !== comment_id_to_delete))
-        
-        <DeleteComment handleDelete={handleDelete} />
   }
-
-
-
 
 
 
@@ -67,9 +62,10 @@ const Main = () => {
                                     <Avatar name={comment.email} />
 
 
-
+        
                                     <button type="button" onClick={handleDelete}>x</button>
-
+                                      
+                                
 
 
                                     <li>
