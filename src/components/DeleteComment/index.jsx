@@ -3,21 +3,27 @@ import './style.css';
 
 const DeleteComment = () => {
 
-    //const [list, setList] = useState([]);
+    const [comments, setComments] = useState([]);
 
     const handleDelete = () => {
         console.log('Delete')
-        //const updatedList = list.filter((comments) => comments.id !== id);
-        //setList(updatedList);
+        const updatedList = comments.filter((comments) => comments.id !== id);
+        setComments(updatedList);
     }
 
 
     return (
 
-        <div>
+        <div>   
+            <ul>
+            {comments.map(comment => (
+                <li>
+                    <button type="button" onClick={() => handleDelete()}>x</button>
+                </li>
+            ))}
+
             
-            <button type="button" onClick={() => handleDelete()}>x</button>
-           
+            </ul>
 
         </div>
 
