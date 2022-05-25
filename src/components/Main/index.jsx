@@ -3,7 +3,7 @@ import './style.css';
 import Form from '../Form';
 import Avatar from '../Avatar';
 
-const Main = ({name, email, text}) => {
+const Main = () => {
 
     const [posts, setPosts] = useState(null);
     const [comments, setComments] = useState(null);
@@ -55,15 +55,10 @@ const Main = ({name, email, text}) => {
                             
                             <div className="comment-table" key={comment.id}>
                                 <ul>
+
                                     <Avatar name={comment.email} />
-
-
-
         
                                     <button type="button" onClick={deleteHandle(comment.id)}>x</button>
-                                      
-
-
 
                                     <li>
                                         <div className="comment-name">{comment.name}</div>
@@ -82,9 +77,7 @@ const Main = ({name, email, text}) => {
                     </div>
                     
 
-
-                    <Form name={name} email={email} text={text} />
-
+                    <Form />
 
 
                     <br />

@@ -2,20 +2,18 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-//import components
 import Header from './components/Header';
 import Main from './components/Main';
 
 const App = () => {
   return (
 
-    
-  <div className="container">
+    <div className="container">
 
-    <Header title="Viable One - FE test" />
-    <Main />
+      <Header title="Viable One - FE test" />
+      <Main />
 
-  </div>
+    </div>
 
 
 );
