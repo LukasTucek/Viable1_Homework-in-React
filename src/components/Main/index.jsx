@@ -18,6 +18,9 @@ const Main = () => {
     }, []);
 
 
+//pro delete bych použil fetch s metodou DELETE místo filter(), podle dokumentace to ale neupravuje data na serveru, ¨
+//takže jsem použil filter, se kterým upravuju data ve statu
+
     const deleteHandle = (id) => () => //fce, která zavolá fci, když uživatel klikne na button 
         setComments(comments.filter((c) => c.id !== id));
     
